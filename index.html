@@ -27,57 +27,153 @@
   </head>
   <body>
     <!-- Nav section -->
-    <section class="container mx-auto mt-20 bg-white"><nav>
-      <div class="navbar bg-base-100">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+    <section class="container mx-auto mt-20 bg-white">
+      <nav>
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+                <li class="tooltip" data-tip="Home">
+                  <img class="h-14 w-11" src="./images/Frame.png" alt="" />
+                </li>
+                <li class="tooltip" data-tip="Edit">
+                  <img class="h-14 w-11" src="./images/Frame (1).png" alt="" />
+                </li>
+                <li class="tooltip" data-tip="Add">
+                  <img class="h-14 w-11" src="./images/Frame (2).png" alt="" />
+                </li>
+                <li class="tooltip" data-tip="BookMark">
+                  <img class="h-14 w-11" src="./images/Frame (3).png" alt="" />
+                </li>
+              </ul>
             </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            <a class="font-bold text-3xl"
+              >O<span class="text-red-600">nL</span>ine
+              <span class="text-red-600">F</span>o<span class="text-red-600"
+                >R</span
+              >um</a
             >
-            <li class="tooltip" data-tip="Home"><img class="h-14 w-11 "  src="./images/Frame.png" alt=""></li>
-            <li class="tooltip" data-tip="Edit"><img class="h-14 w-11"  src="./images/Frame (1).png" alt=""></li>
-            <li class="tooltip" data-tip="Add"><img class="h-14 w-11"  src="./images/Frame (2).png" alt=""></li>
-            <li class="tooltip" data-tip="BookMark"><img class="h-14 w-11"  src="./images/Frame (3).png" alt=""></li>
+          </div>
+          <div class="navbar-center pl-96 hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li class="tooltip" data-tip="Home">
+                <img src="./images/Frame.png" alt="" />
+              </li>
+              <li class="tooltip" data-tip="Edit">
+                <img src="./images/Frame (1).png" alt="" />
+              </li>
+              <li class="tooltip" data-tip="Add">
+                <img src="./images/Frame (2).png" alt="" />
+              </li>
+              <li class="tooltip" data-tip="BookMark">
+                <img src="./images/Frame (3).png" alt="" />
+              </li>
             </ul>
           </div>
-          <a class="font-bold text-3xl">O<span class="text-red-600">nL</span>ine <span class="text-red-600">F</span>o<span class="text-red-600">R</span>um</a>
+          <div class="navbar-end">
+            <a class="btn rounded-2xl px-9 text-white bg-[#797DFC]">Sign In</a>
+          </div>
         </div>
-        <div class="navbar-center pl-96 hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li class="tooltip" data-tip="Home"><img src="./images/Frame.png" alt=""></li>
-            <li class="tooltip" data-tip="Edit"><img src="./images/Frame (1).png" alt=""></li>
-            <li class="tooltip" data-tip="Add"><img src="./images/Frame (2).png" alt=""></li>
-            <li class="tooltip" data-tip="BookMark"><img src="./images/Frame (3).png" alt=""></li>
-             
-          </ul>
+      </nav>
+    </section>
+    <main class="container mx-auto bg-white">
+      <!-- banner -->
+      <section class="container mx-auto mt-20">
+        <div
+          class="hero rounded-2xl"
+          style="background-image: url(./images/banner.png)"
+        >
+          <div class="hero-overlay bg-opacity-40"></div>
+          <div
+            class=" text-center text-neutral-content py-40 rounded-xl"
+          >
+            <div class="flex lg:gap-24">
+              <div class="mt-24 lg:ml-6">
+                <h1 class="text-5xl font-bold text-white">
+                  Welcome to the <br /><span class="text-[#797DFC]"
+                    >Online</span
+                  >
+                  Forum
+                </h1>
+                <p class="mt-2 mb-5">
+                  Share your favorite opinion and win and online forum coffee
+                  mug!
+                </p>
+                <div class="bg-white py-1 mx-16 rounded-2xl mb-">
+                  <input class=" " placeholder="Search here anything" type="text" />
+                  <button class="rounded-2xl px-2 lg:px-9 py-1 text-white bg-[#797DFC]">
+                    Search
+                  </button>
+                </div>
+              </div>
+              <div class="bg-white  flex  lg:gap-4 p-1 lg:p-12 rounded-xl" >
+                <div class=" text-start">
+                  <p>Registered Users</p>
+                  <p>Forum</p>
+                  <p>Topics</p>
+                  <p>Replies</p>
+                </div>
+                <div class="">
+                  <p>01</p>
+                  <p>05</p>
+                  <p>01</p>
+                  <p>01</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="navbar-end">
-          <a class="btn rounded-2xl px-9 text-white bg-[#797DFC]">Sign In</a>
-        </div>
-      </div>
-    </nav></section>
-    <main>
-      <h1>Main</h1>
+      </section>
+
+      <!-- Let’s Discuss -->
+      <section><h1>Discuss</h1></section>
+      <!-- join forum -->
+      <section class="container rounded-xl mx-auto mt-20 bg-[#12132D] ">
+<div class="flex justify-between gap-5">
+  <div class="pl-14 lg:pl-72 pb-10">
+    <h1 class="text-4xl font-bold text-white pt-16  lg:pt-28 pb-8">Join Our Forum</h1>
+    <p class="text-white pb-4">Share your favorite opinion and win and online forum coffee mug! <br> Yes, you can run unit tests and view the results directly within the app. </p>
+    <button class="rounded-2xl px-9 py-3 mt-3 text-white bg-[#797DFC]">Registered Now</button>
+  </div>
+  <div class="pt-10 pr-12 pb-4"><img src="./images/joinforum.png" alt=""></div>
+</div>
+      </section>
+
+      <!-- latest post -->
+      <section><h1>latest post</h1></section>
     </main>
-    <footer>
-      <h1>footer</h1>
+    <footer class="bg-[#12132D0D] mt-20">
+     <div class="flex flex-col justify-center items-center">
+      <h1 class="font-bold text-3xl mt-24"
+      >O<span class="text-red-600">nL</span>ine
+      <span class="text-red-600">F</span>o<span class="text-red-600"
+        >R</span
+      >um</h1>
+      <p class="mt-4 mb-8 text-center">
+        Online forums: vibrant spaces for discussion, advice, and community connections. Moderators ensure respectful interactions in niche communities.</p>
+  <img src="./images/Social.png" alt="">
+  <hr class="mt-12 mb-12 border-dotted border border-black mx-10 w-10/12  ">
+  <p class="mb-24">2017, All Rights Reserved.</p>
+     </div>
     </footer>
 
     <script src="retro.js"></script>
