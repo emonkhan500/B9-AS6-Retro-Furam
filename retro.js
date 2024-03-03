@@ -1,8 +1,9 @@
 const contentLoad= async()=>{
     const res= await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
     const data=await res.json()
+    
     const content=data.posts
-   
+    console.log(content)
     displayContent(content)
 }
 const displayContent= (content)=>{
@@ -35,6 +36,47 @@ const displayContent= (content)=>{
     cardContainer.appendChild(createDiv)
     });
    
-console.log(content)
+
 }
+
+
+const cardLoad= async()=>{
+  const res= await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
+    const data=await res.json()
+    displayCard(data)
+}
+const displayCard=(datas)=>{
+  const latestContainer= document.getElementById('display-container')
+
+  datas.forEach((data)=>{
+    const createDiv = document.createElement('div');
+    createDiv.classList = `card w-96 bg-base-100 shadow-xl`;
+
+    createDiv.innerHTML=`
+    <figure class="px-10 pt-10">
+              <img src="${data.cover_image}" alt="Shoes" class="rounded-xl" />
+            </figure>
+            
+            <div class="card-body  ">
+              <div class="flex gap-2">
+                <img src="./images/date.png" alt="">
+                <span>${data.author?.posted_date || 'No Publish Date'}</span>
+              </div>
+              <h2 class=" text-xl font-bold">${data.title}</h2>
+              <p class="">${data.description} </p>
+              <div class="flex gap-3 mt-3">
+               <div>
+                <img class="h-16 w-16 rounded-2xl" src="${data.profile_image}" alt="">
+              </div>
+               <div class="">
+                <h1>${data.author?.name}</h1>
+                <p>${data.author?.designation || 'Unknown'}</p>
+               </div>
+              </div>
+            </div>
+    `;
+    latestContainer.appendChild(createDiv)
+  });
+};
 contentLoad()
+cardLoad()
