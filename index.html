@@ -27,7 +27,7 @@
   </head>
   <body>
     <!-- Nav section -->
-    <section class="container mx-auto mt-20 bg-white">
+    <section class="container mx-auto pt-20 overflow-hidden bg-white">
       <nav>
         <div class="navbar bg-base-100">
           <div class="navbar-start">
@@ -97,16 +97,11 @@
     </section>
     <main class="container mx-auto bg-white">
       <!-- banner -->
-      <section class="container mx-auto mt-20">
-        <div
-          class="hero rounded-2xl"
-          style="background-image: url(./images/banner.png)"
-        >
-          <div class="hero-overlay bg-opacity-40"></div>
-          <div
-            class=" text-center text-neutral-content py-40 rounded-xl"
-          >
-            <div class="flex lg:gap-24">
+      <section class="container rounded-xl overflow-hidden mx-auto mt-20">
+        <div class="hero" style="background-image: url(./images/banner.png)">
+          <div class="hero-overlay bg-[#12132D] bg-opacity-95"></div>
+          <div class="text-center text-neutral-content py-40 rounded-xl">
+            <div class="flex flex-col lg:flex-row lg:gap-24">
               <div class="mt-24 lg:ml-6">
                 <h1 class="text-5xl font-bold text-white">
                   Welcome to the <br /><span class="text-[#797DFC]"
@@ -119,24 +114,30 @@
                   mug!
                 </p>
                 <div class="bg-white py-1 mx-16 rounded-2xl mb-">
-                  <input class=" " placeholder="Search here anything" type="text" />
-                  <button class="rounded-2xl px-2 lg:px-9 py-1 text-white bg-[#797DFC]">
+                  <input
+                    class=" "
+                    placeholder="Search here anything"
+                    type="text"
+                  />
+                  <button
+                    class="rounded-2xl px-2 lg:px-9 py-1 text-white bg-[#797DFC]"
+                  >
                     Search
                   </button>
                 </div>
               </div>
-              <div class="bg-white  flex  lg:gap-4 p-1 lg:p-12 rounded-xl" >
-                <div class=" text-start">
-                  <p>Registered Users</p>
-                  <p>Forum</p>
-                  <p>Topics</p>
-                  <p>Replies</p>
+              <div class="bg-white flex gap-10 mx-auto lg:gap-4 p-5 mt-4 lg:p-12 rounded-xl">
+                <div class="text-start">
+                  <p class="text-black">Registered Users</p>
+                  <p class="text-black">Forum</p>
+                  <p class="text-black">Topics</p>
+                  <p class="text-black">Replies</p>
                 </div>
                 <div class="">
-                  <p>01</p>
-                  <p>05</p>
-                  <p>01</p>
-                  <p>01</p>
+                  <p class="text-black">01</p>
+                  <p class="text-black">05</p>
+                  <p class="text-black">01</p>
+                  <p class="text-black">01</p>
                 </div>
               </div>
             </div>
@@ -144,36 +145,88 @@
         </div>
       </section>
 
+
+
+
+
+
+
+
+
       <!-- Let’s Discuss -->
-      <section><h1>Discuss</h1></section>
+      <section class="container mx-auto mt-20">
+        <div class="text-center ">
+          <h1 class=" text-5xl font-bold mb-6 ">Let’s Discuss</h1>
+          <p class="mb-20">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+        </div>
+        <div class="flex gap-4">
+          <div id="card-container" class="flex-1">
+            <!-- text-img div -->
+            
+          </div>
+          <div id="card" class="w-1/3">
+            
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <!-- join forum -->
-      <section class="container rounded-xl mx-auto mt-20 bg-[#12132D] ">
-<div class="flex justify-between gap-5">
-  <div class="pl-14 lg:pl-72 pb-10">
-    <h1 class="text-4xl font-bold text-white pt-16  lg:pt-28 pb-8">Join Our Forum</h1>
-    <p class="text-white pb-4">Share your favorite opinion and win and online forum coffee mug! <br> Yes, you can run unit tests and view the results directly within the app. </p>
-    <button class="rounded-2xl px-9 py-3 mt-3 text-white bg-[#797DFC]">Registered Now</button>
-  </div>
-  <div class="pt-10 pr-12 pb-4"><img src="./images/joinforum.png" alt=""></div>
-</div>
+      <section class="container rounded-xl mx-auto mt-20 bg-[#12132D]">
+        <div class="flex justify-between gap-5">
+          <div class="pl-14 lg:pl-72 pb-10">
+            <h1 class="text-4xl font-bold text-white pt-16 lg:pt-28 pb-8">
+              Join Our Forum
+            </h1>
+            <p class="text-white pb-4">
+              Share your favorite opinion and win and online forum coffee mug!
+              <br />
+              Yes, you can run unit tests and view the results directly within
+              the app.
+            </p>
+            <button class="rounded-2xl px-9 py-3 mt-3 text-white bg-[#797DFC]">
+              Registered Now
+            </button>
+          </div>
+          <div class="pt-10 pr-12 pb-4">
+            <img src="./images/joinforum.png" alt="" />
+          </div>
+        </div>
       </section>
 
       <!-- latest post -->
       <section><h1>latest post</h1></section>
     </main>
     <footer class="bg-[#12132D0D] mt-20">
-     <div class="flex flex-col justify-center items-center">
-      <h1 class="font-bold text-3xl mt-24"
-      >O<span class="text-red-600">nL</span>ine
-      <span class="text-red-600">F</span>o<span class="text-red-600"
-        >R</span
-      >um</h1>
-      <p class="mt-4 mb-8 text-center">
-        Online forums: vibrant spaces for discussion, advice, and community connections. Moderators ensure respectful interactions in niche communities.</p>
-  <img src="./images/Social.png" alt="">
-  <hr class="mt-12 mb-12 border-dotted border border-black mx-10 w-10/12  ">
-  <p class="mb-24">2017, All Rights Reserved.</p>
-     </div>
+      <div class="flex flex-col justify-center items-center">
+        <h1 class="font-bold text-3xl mt-24">
+          O<span class="text-red-600">nL</span>ine
+          <span class="text-red-600">F</span>o<span class="text-red-600">R</span
+          >um
+        </h1>
+        <p class="mt-4 mb-8 text-center">
+          Online forums: vibrant spaces for discussion, advice, and community
+          connections. Moderators ensure respectful interactions in niche
+          communities.
+        </p>
+        <img src="./images/Social.png" alt="" />
+        <hr
+          class="mt-12 mb-12 border-dotted border border-black mx-10 w-10/12"
+        />
+        <p class="mb-24">2017, All Rights Reserved.</p>
+      </div>
     </footer>
 
     <script src="retro.js"></script>
