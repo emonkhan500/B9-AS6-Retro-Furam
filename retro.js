@@ -82,9 +82,14 @@ const displayCart=(data)=>{
 // search
 
 const searchShow=async (value)=>{
+  const spiner=document.getElementById('loading-spiner')
+  spiner.classList.remove('hidden')
   const res= await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${value}`)
   const data=await res.json()
   const searchContent=data.posts
+  if(searchContent.length>0){
+    spiner.classList.add('hidden')
+  }
   console.log(searchContent)
   displayContent(searchContent)
 }
