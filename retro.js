@@ -67,7 +67,12 @@ const displayCart=(data)=>{
    createDiv.innerHTML=`
    <div class="flex gap-20 mt-4 rounded bg-slate-200 px-9">
    <h1>${data.title}</h1>
-   <p>${data.view_count}</p>
+   <div class="flex gap-2 justify-center items-center">
+   <img src="./images/tabler-icon-eye.png" alt="">
+   <p> ${data.view_count}</p>
+   
+   </div
+  
    </div>
    `
    cart.appendChild(createDiv)
