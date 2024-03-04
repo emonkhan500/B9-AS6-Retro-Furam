@@ -88,7 +88,9 @@ const searchShow=async (value)=>{
   const data=await res.json()
   const searchContent=data.posts
   if(searchContent.length>0){
-    spiner.classList.add('hidden')
+    setTimeout(()=>{
+      spiner.classList.add('hidden')
+    },2000)
   }
   console.log(searchContent)
   displayContent(searchContent)
