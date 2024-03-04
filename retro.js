@@ -1,25 +1,29 @@
-const contentLoad= async()=>{
+const contentLoad= async(value)=>{
     const res= await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
     const data=await res.json()
     
     const content=data.posts
-    console.log(content)
+    // console.log(content)
     displayContent(content)
 }
 const displayContent= (content)=>{
     const cardContainer = document.getElementById('card-container')
+    cardContainer.textContent=' '
     content.forEach((card) => {
         const createDiv = document.createElement('div');
-    createDiv.classList = `flex gap-5`;
+    createDiv.classList = `flex gap-5 mb-9 bg-gray-200 p-4 rounded`;
+     
     createDiv.innerHTML = `
-    <div class="mb-5"><img class="h-16 w-16 rounded-xl" src="${card.image}" alt="" /></div>
+    <div class="indicator">     
+    <div id="indicator" class="indicator-item badge ${card.isActive ? 'bg-green-700' : 'bg-red-700'} "></div> 
+   <img class="h-16 w-16 rounded-xl" src="${card.image}" alt="" /></div>
              
-              <div>
+              <div >
                 <div class="flex gap-5 font-medium">
                   <p > #${card.category}</p>
                   <p>Author :${card.author.name}</p>
                 </div>
-                <h1 class="text3xl font-bold mt-3 mb-4">${card.title}</h1>
+                <h1 class="text-3xl gap-5 font-bold mt-3 mb-4">${card.title}</h1>
                 <p class="mb-10">${card.description}</p>
                 <div class="flex justify-between">
                  <div class="flex gap-6">
@@ -28,16 +32,75 @@ const displayContent= (content)=>{
                   <img src="./images/tabler-icon-clock-hour-9.png" alt=""><span>${card.posted_time} min</span>
                  </div>
                  <div>
-                  <img src="./images/email 1.png" alt="">
+                  <img onclick="replace(${card.id})" src="./images/email 1.png" alt="">
                  </div>
                 </div>
               </div>
     `;
+  
     cardContainer.appendChild(createDiv)
     });
    
 
 }
+
+const replace=async(cardId)=>{
+  // console.log(cardId)
+  const res=await fetch(`https://openapi.programming-hero.com/api/retro-forum/post/${cardId}`)
+  const data=await res.json()
+  // console.log(data)
+  displayCart(data)
+  
+  
+}
+let count=0;
+const displayCart=(data)=>{
+
+  const cart= document.getElementById('cart')
+  count=count+1;
+  //  console.log(count)
+  const mark= document.getElementById('mark')
+  mark.innerText=count;
+  
+  const createDiv = document.createElement('div');
+   createDiv.classList = `flex gap-5`;
+   createDiv.innerHTML=`
+   <div class="flex gap-20 mt-4 rounded bg-slate-200 px-9">
+   <h1>${data.title}</h1>
+   <p>${data.view_count}</p>
+   </div>
+   `
+   cart.appendChild(createDiv)
+   
+}
+
+// search
+
+const searchShow=async (value)=>{
+  const res= await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${value}`)
+  const data=await res.json()
+  const searchContent=data.posts
+  console.log(searchContent)
+  displayContent(searchContent)
+}
+
+const search=()=>{
+ 
+  const input=document.getElementById('input')
+  
+  const inputValue=input.value;
+  
+  console.log(inputValue)
+  searchShow(inputValue)
+  
+  // if(inputValue){
+  //   contentLoad(inputValue)
+  // }
+  // else{
+  //   alert('please enter a valid category')
+  // }
+}
+
 
 
 const cardLoad= async()=>{

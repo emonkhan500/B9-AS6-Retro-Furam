@@ -23,9 +23,16 @@
       body {
         font-family: "Mulish", sans-serif;
       }
+      .emon:active{
+border:0 !important;
+border-color: white;
+color: red;
+      }
     </style>
   </head>
   <body>
+
+
     <!-- Nav section -->
     <section class="container mx-auto pt-20 overflow-hidden bg-white">
       <nav>
@@ -95,7 +102,11 @@
         </div>
       </nav>
     </section>
+
+
     <main class="container mx-auto bg-white">
+
+
       <!-- banner -->
       <section class="container rounded-xl overflow-hidden mx-auto mt-20">
         <div class="hero" style="background-image: url(./images/banner.png)">
@@ -114,12 +125,12 @@
                   mug!
                 </p>
                 <div class="bg-white py-1 mx-16 rounded-2xl mb-">
-                  <input
-                    class=" "
+                  <input id="input"
+                    class="emon"
                     placeholder="Search here anything"
                     type="text"
                   />
-                  <button
+                  <button onclick="search()"
                     class="rounded-2xl px-2 lg:px-9 py-1 text-white bg-[#797DFC]"
                   >
                     Search
@@ -147,25 +158,27 @@
 
 
 
-
-
-
-
-
-
       <!-- Let’s Discuss -->
       <section class="container mx-auto mt-20">
         <div class="text-center ">
           <h1 class=" text-5xl font-bold mb-6 ">Let’s Discuss</h1>
           <p class="mb-20">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
         </div>
-        <div class="flex gap-4">
+        <div class="flex flex-col lg:flex-row gap-9 ">
           <div id="card-container" class="flex-1">
             <!-- text-img div -->
             
           </div>
-          <div id="card" class="w-1/3">
-            
+          <div class="lg:w-1/3 ml-4 lg:ml-0 ">
+            <div id="card" class="bg-gray-300 px-9 py-6 rounded">
+             <div class="flex justify-between">
+              <h1>Title</h1>
+              <p>Mark as read(<span id="mark">0</span>)</p>
+             </div>
+             <div id="cart" class="">
+
+             </div>
+            </div>
           </div>
         </div>
       </section>
@@ -207,7 +220,7 @@
           <p class="mb-20">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
         </div>
              <!-- card -->
-        <div  id="display-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div  id="display-container" class="pl-24 gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           
         </div>
       </section>
@@ -216,11 +229,7 @@
 
 
 
-
-
-
-
-    <footer class="bg-[#12132D0D] mt-60">
+    <footer class="bg-[#12132D0D] mt-20">
       <div class="flex flex-col justify-center items-center">
         <h1 class="font-bold text-3xl mt-24">
           O<span class="text-red-600">nL</span>ine
@@ -239,6 +248,9 @@
         <p class="mb-24">2017, All Rights Reserved.</p>
       </div>
     </footer>
+
+
+
 
     <script src="retro.js"></script>
   </body>
